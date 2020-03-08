@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="fathorazi.id.ac.unuja.bus">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+        </activity>
+        <activity android:name="Bingobus24Activity"/>
+        <activity android:name="Bingobus28Activity"/>
+        <activity android:name="Bingobus27Activity"/>
+        <activity android:name="Bingobus31Activity"/>
+        <activity android:name="Bingobus4Activity" android:windowSoftInputMode="adjustUnspecified|stateUnchanged|stateVisible|stateAlwaysVisible|adjustResize"/>
+        <activity android:name="Bingobus7Activity"/>
+        <activity android:name="ListinwsActivity"/>
+        <activity android:name="Bingobus33Activity"/>
+        <activity android:name="Bingobus32Activity"/>
+        <activity android:name="Bus_result1Activity"/>
+        <activity android:theme="@style/activity" android:name="Bingobus_mobileverificationActivity" android:windowSoftInputMode="adjustUnspecified|stateVisible|adjustResize"/>
+        <activity android:name="Splash_screenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/activity" android:name="Bingobus_Edit_MobileActivity" android:windowSoftInputMode="adjustUnspecified|stateVisible|adjustResize"/>
+        <activity android:theme="@style/activity" android:name="Bingobus_walkthruoghActivity" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="Bingobus_Select_CountryActivity"/>
+        <activity android:theme="@style/activity" android:name="Bingobus_Last_StepActivity" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="Bingobus5Activity" android:windowSoftInputMode="adjustUnspecified|stateUnchanged|stateVisible|stateAlwaysVisible|adjustResize"/>
+        <activity android:name="SplaceScreenWSActivity">
+        </activity>
+        <activity android:name="BingoBusBookingDetailActivity"/>
+        <activity android:name="BingoBusYourTicketBookedActivity"/>
+        <activity android:name="BingoBusBookingHistoryActivity"/>
+
+    </application>
+
+</manifest>

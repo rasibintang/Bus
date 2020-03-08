@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Bus</string>
+    <string name="multitext"> A text message with a 6-digit verification code was sent to 954-999-1840 </string>
+    <string name="multitext1"> Are you\n looking\n for bus? </string>
+</resources>
