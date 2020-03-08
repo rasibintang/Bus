@@ -16,10 +16,9 @@ public class ListinwsActivity extends AppCompatActivity {
     private ArrayList<ListModel> listModels;
     private RecyclerView recyclerView;
 
-    /* access modifiers changed from: protected */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) R.layout.activity_listinws);
+        setContentView(R.layout.activity_listinws);
         this.recyclerView = (RecyclerView) findViewById(R.id.List_recycle);
         this.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         this.recyclerView.setItemAnimator(new DefaultItemAnimator());

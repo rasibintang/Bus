@@ -15,12 +15,10 @@ public class AirplaneAdapter extends SelectableAdapter<ViewHolder> {
     private Context mContext;
     private List<AbstractItem> mItems;
     private LayoutInflater mLayoutInflater;
-    /* access modifiers changed from: private */
     public OnSeatSelected mOnSeatSelected;
 
     private static class CenterViewHolder extends ViewHolder {
         ImageView imgSeat;
-        /* access modifiers changed from: private */
         public final ImageView imgSeatSelected;
         ImageView img_nomral_booked;
 
@@ -34,7 +32,6 @@ public class AirplaneAdapter extends SelectableAdapter<ViewHolder> {
 
     private static class EdgeViewHolder extends ViewHolder {
         ImageView imgSeat;
-        /* access modifiers changed from: private */
         public final ImageView imgSeatSelected;
         ImageView img_nomral_booked;
 

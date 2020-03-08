@@ -10,11 +10,11 @@ import java.util.ArrayList;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import fathorazi.id.ac.unuja.bus.R;
-import model.Bingobus_Result1Model;
+import model.BusResult1Model;
 
-public class Bingobus_Result1Adapter extends RecyclerView.Adapter<Bingobus_Result1Adapter.ViewHolder> {
+public class BusResult1Adapter extends RecyclerView.Adapter<BusResult1Adapter.ViewHolder> {
     Context context;
-    ArrayList<Bingobus_Result1Model> models;
+    ArrayList<BusResult1Model> models;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView acsleeper;
@@ -26,7 +26,7 @@ public class Bingobus_Result1Adapter extends RecyclerView.Adapter<Bingobus_Resul
         }
     }
 
-    public Bingobus_Result1Adapter(Context context2, ArrayList<Bingobus_Result1Model> arrayList) {
+    public BusResult1Adapter(Context context2, ArrayList<BusResult1Model> arrayList) {
         this.context = context2;
         this.models = arrayList;
     }
@@ -36,7 +36,7 @@ public class Bingobus_Result1Adapter extends RecyclerView.Adapter<Bingobus_Resul
     }
 
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
-        viewHolder.acsleeper.setText(((Bingobus_Result1Model) this.models.get(i)).getAcsleeper());
+        viewHolder.acsleeper.setText(((BusResult1Model) this.models.get(i)).getAcsleeper());
     }
 
     public int getItemCount() {

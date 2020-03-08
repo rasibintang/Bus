@@ -2,13 +2,11 @@ package fathorazi.id.ac.unuja.bus;
 
 import Adapter.OffersAdapter;
 
-import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -68,11 +66,7 @@ public class _f_HomeActivity extends AppCompatActivity implements OnClickListene
     LinearLayout linear3;
     LinearLayout linear4;
     TextView offer;
-    private OffersAdapter offersAdapter;
-    private ArrayList<OffersModel> offersModel;
-    Integer[] poster = {Integer.valueOf(R.drawable.banner1), Integer.valueOf(R.drawable.banner2), Integer.valueOf(R.drawable.banner3), Integer.valueOf(R.drawable.banner4), Integer.valueOf(R.drawable.banner5), Integer.valueOf(R.drawable.banner6)};
     TextView profile;
-    private RecyclerView recyclerView;
     TextView search;
     TextView searchbus;
     LinearLayout showdata;
@@ -83,7 +77,7 @@ public class _f_HomeActivity extends AppCompatActivity implements OnClickListene
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(R.layout.activity_bingobus24);
+        setContentView(R.layout._f_activity_home);
         this.goingfrom = (LinearLayout) findViewById(R.id.goingfrom);
         this.goingto = (LinearLayout) findViewById(R.id.goingto);
         this.searchbus = (TextView) findViewById(R.id.searchbus);
@@ -118,8 +112,7 @@ public class _f_HomeActivity extends AppCompatActivity implements OnClickListene
         this.calender1.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
                 Calendar instance = Calendar.getInstance();
-                DatePickerDialog datePickerDialog = new DatePickerDialog(_f_HomeActivity.this, AlertDialog.THEME_DEVICE_DEFAULT_DARK, _f_HomeActivity.this.dateSetListener, instance.get(1), instance.get(2), instance.get(5));
-                datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+                DatePickerDialog datePickerDialog = new DatePickerDialog(_f_HomeActivity.this, _f_HomeActivity.this.dateSetListener, instance.get(1), instance.get(2), instance.get(5));
                 datePickerDialog.show();
             }
         });
@@ -173,8 +166,7 @@ public class _f_HomeActivity extends AppCompatActivity implements OnClickListene
         this.calenderreturn.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
                 Calendar instance = Calendar.getInstance();
-                DatePickerDialog datePickerDialog = new DatePickerDialog(_f_HomeActivity.this, AlertDialog.THEME_DEVICE_DEFAULT_LIGHT, _f_HomeActivity.this.dateSetListener1, instance.get(1), instance.get(2), instance.get(5));
-                datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+                DatePickerDialog datePickerDialog = new DatePickerDialog(_f_HomeActivity.this, _f_HomeActivity.this.dateSetListener1, instance.get(1), instance.get(2), instance.get(5));
                 datePickerDialog.show();
             }
         });
@@ -224,15 +216,7 @@ public class _f_HomeActivity extends AppCompatActivity implements OnClickListene
                 _f_HomeActivity.this.date_select3.setText(String.valueOf(Integer.valueOf(String.valueOf(i3)).intValue() + 2));
             }
         };
-        this.recyclerView = (RecyclerView) findViewById(R.id.offers);
-        this.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        this.recyclerView.setItemAnimator(new DefaultItemAnimator());
-        this.offersModel = new ArrayList<>();
-        for (Integer offersModel2 : this.poster) {
-            this.offersModel.add(new OffersModel(offersModel2));
-        }
-        this.offersAdapter = new OffersAdapter(this, this.offersModel);
-        this.recyclerView.setAdapter(this.offersAdapter);
+
         this.showdata = (LinearLayout) findViewById(R.id.showdata);
         this.showdata1 = (LinearLayout) findViewById(R.id.showdata1);
         this.showdata.setOnClickListener(new OnClickListener() {
@@ -241,6 +225,7 @@ public class _f_HomeActivity extends AppCompatActivity implements OnClickListene
                 _f_HomeActivity.this.showdata1.setVisibility(View.VISIBLE);
             }
         });
+
         this.circle1 = (FrameLayout) findViewById(R.id.circle1);
         this.circle2 = (FrameLayout) findViewById(R.id.circle2);
         this.circle3 = (FrameLayout) findViewById(R.id.circle3);
@@ -370,6 +355,10 @@ public class _f_HomeActivity extends AppCompatActivity implements OnClickListene
                         this.offer.setTextColor(Color.parseColor("#000000"));
                         this.booking.setTextColor(Color.parseColor("#91959d"));
                         this.profile.setTextColor(Color.parseColor("#91959d"));
+
+                        Intent verifikasi = new Intent(getApplicationContext(), _f_OffersActivity.class);
+                        finish();
+                        startActivity(verifikasi);
                         return;
                     case R.id.liner3 /*2131296412*/:
                         this.bus.setImageResource(R.drawable.ic_bus_gray);
@@ -381,9 +370,9 @@ public class _f_HomeActivity extends AppCompatActivity implements OnClickListene
                         this.booking.setTextColor(Color.parseColor("#000000"));
                         this.profile.setTextColor(Color.parseColor("#91959d"));
 
-                        Intent verifikasi = new Intent(getApplicationContext(), _p_BookingHistoryActivity.class);
+                        Intent go = new Intent(getApplicationContext(), _p_BookingHistoryActivity.class);
                         finish();
-                        startActivity(verifikasi);
+                        startActivity(go);
                         return;
                     case R.id.liner4 /*2131296413*/:
                         this.bus.setImageResource(R.drawable.ic_bus_gray);

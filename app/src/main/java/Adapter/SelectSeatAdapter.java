@@ -8,11 +8,11 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import androidx.recyclerview.widget.RecyclerView;
 import fathorazi.id.ac.unuja.bus.R;
-import model.Bingobus33Model;
+import model.SelectSeatModel;
 
-public class Bingobus33Adapter extends RecyclerView.Adapter<Bingobus33Adapter.ViewHolder> {
+public class SelectSeatAdapter extends RecyclerView.Adapter<SelectSeatAdapter.ViewHolder> {
     Context context;
-    ArrayList<Bingobus33Model> models;
+    ArrayList<SelectSeatModel> models;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView sit1;
@@ -23,7 +23,7 @@ public class Bingobus33Adapter extends RecyclerView.Adapter<Bingobus33Adapter.Vi
         }
     }
 
-    public Bingobus33Adapter(Context context2, ArrayList<Bingobus33Model> arrayList) {
+    public SelectSeatAdapter(Context context2, ArrayList<SelectSeatModel> arrayList) {
         this.context = context2;
         this.models = arrayList;
     }
@@ -33,7 +33,7 @@ public class Bingobus33Adapter extends RecyclerView.Adapter<Bingobus33Adapter.Vi
     }
 
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
-        viewHolder.sit1.setImageResource(((Bingobus33Model) this.models.get(i)).getSit1().intValue());
+        viewHolder.sit1.setImageResource(((SelectSeatModel) this.models.get(i)).getSit1().intValue());
     }
 
     public int getItemCount() {

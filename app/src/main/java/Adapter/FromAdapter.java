@@ -12,67 +12,65 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import fathorazi.id.ac.unuja.bus.R;
-import model.Customer;
+import model.From;
 
-public class CustomerAdapter extends ArrayAdapter<Customer> {
-    ArrayList<Customer> customers;
+public class FromAdapter extends ArrayAdapter<From> {
+    ArrayList<From> froms;
     Filter myFilter = new Filter() {
         public CharSequence convertResultToString(Object obj) {
-            Customer customer = (Customer) obj;
+            From from = (From) obj;
             StringBuilder sb = new StringBuilder();
-            sb.append(customer.getFirstName());
+            sb.append(from.getFirstName());
             sb.append(" ");
-            sb.append(customer.getLastName());
+            sb.append(from.getLastName());
             return sb.toString();
         }
 
-        /* access modifiers changed from: protected */
         public FilterResults performFiltering(CharSequence charSequence) {
             if (charSequence == null) {
                 return new FilterResults();
             }
-            CustomerAdapter.this.suggestions.clear();
-            Iterator it = CustomerAdapter.this.tempCustomer.iterator();
+            FromAdapter.this.suggestions.clear();
+            Iterator it = FromAdapter.this.tempFrom.iterator();
             while (it.hasNext()) {
-                Customer customer = (Customer) it.next();
-                if (customer.getFirstName().toLowerCase().startsWith(charSequence.toString().toLowerCase())) {
-                    CustomerAdapter.this.suggestions.add(customer);
+                From from = (From) it.next();
+                if (from.getFirstName().toLowerCase().startsWith(charSequence.toString().toLowerCase())) {
+                    FromAdapter.this.suggestions.add(from);
                 }
             }
             FilterResults filterResults = new FilterResults();
-            filterResults.values = CustomerAdapter.this.suggestions;
-            filterResults.count = CustomerAdapter.this.suggestions.size();
+            filterResults.values = FromAdapter.this.suggestions;
+            filterResults.count = FromAdapter.this.suggestions.size();
             return filterResults;
         }
 
-        /* access modifiers changed from: protected */
         public void publishResults(CharSequence charSequence, FilterResults filterResults) {
             ArrayList arrayList = (ArrayList) filterResults.values;
             if (filterResults != null && filterResults.count > 0) {
-                CustomerAdapter.this.clear();
+                FromAdapter.this.clear();
                 Iterator it = arrayList.iterator();
                 while (it.hasNext()) {
-                    CustomerAdapter.this.add((Customer) it.next());
-                    CustomerAdapter.this.notifyDataSetChanged();
+                    FromAdapter.this.add((From) it.next());
+                    FromAdapter.this.notifyDataSetChanged();
                 }
             }
         }
     };
     int myPos = 0;
-    ArrayList<Customer> suggestions;
-    ArrayList<Customer> tempCustomer;
+    ArrayList<From> suggestions;
+    ArrayList<From> tempFrom;
 
-    public CustomerAdapter(Context context, ArrayList<Customer> arrayList) {
-        super(context, R.layout.customer_row1, arrayList);
-        this.customers = arrayList;
-        this.tempCustomer = new ArrayList<>(arrayList);
+    public FromAdapter(Context context, ArrayList<From> arrayList) {
+        super(context, R.layout.item_from, arrayList);
+        this.froms = arrayList;
+        this.tempFrom = new ArrayList<>(arrayList);
         this.suggestions = new ArrayList<>(arrayList);
     }
 
     public View getView(int i, View view, ViewGroup viewGroup) {
-        Customer customer = (Customer) getItem(i);
+        From from = (From) getItem(i);
         if (view == null) {
-            view = LayoutInflater.from(getContext()).inflate(R.layout.customer_row1, viewGroup, false);
+            view = LayoutInflater.from(getContext()).inflate(R.layout.item_from, viewGroup, false);
         }
         TextView textView = (TextView) view.findViewById(R.id.tvCustomer);
         ImageView imageView = (ImageView) view.findViewById(R.id.ivCustomerImage);
@@ -84,13 +82,13 @@ public class CustomerAdapter extends ArrayAdapter<Customer> {
         }
         if (textView != null) {
             StringBuilder sb = new StringBuilder();
-            sb.append(customer.getFirstName());
+            sb.append(from.getFirstName());
             sb.append(" ");
-            sb.append(customer.getLastName());
+            sb.append(from.getLastName());
             textView.setText(sb.toString());
         }
-        if (!(imageView == null || customer.getProfilePic() == -1)) {
-            imageView.setImageResource(customer.getProfilePic());
+        if (!(imageView == null || from.getProfilePic() == -1)) {
+            imageView.setImageResource(from.getProfilePic());
         }
         return view;
     }

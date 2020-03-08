@@ -40,10 +40,9 @@ public class _p_BookingHistoryActivity extends AppCompatActivity implements OnCl
     Integer[] star = {Integer.valueOf(R.drawable.ic_star), Integer.valueOf(R.drawable.ic_star), Integer.valueOf(R.drawable.ic_star), Integer.valueOf(R.drawable.ic_star), Integer.valueOf(R.drawable.ic_star), Integer.valueOf(R.drawable.ic_star)};
     ImageView user;
 
-    /* access modifiers changed from: protected */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) R.layout.activity_bingo_bus_booking_history);
+        setContentView(R.layout._p_activity_booking_history);
         this.recyclerView = (RecyclerView) findViewById(R.id.booking_history);
         this.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         this.recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -106,6 +105,10 @@ public class _p_BookingHistoryActivity extends AppCompatActivity implements OnCl
                 this.offer.setTextColor(Color.parseColor("#000000"));
                 this.booking.setTextColor(Color.parseColor("#91959d"));
                 this.profile.setTextColor(Color.parseColor("#91959d"));
+                Intent go = new Intent(getApplicationContext(), _f_OffersActivity.class);
+                finish();
+                startActivity(go);
+
                 return;
             case R.id.liner3 /*2131296412*/:
                 this.bus.setImageResource(R.drawable.ic_bus_gray);

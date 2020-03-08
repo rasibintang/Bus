@@ -11,11 +11,11 @@ import java.util.ArrayList;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import fathorazi.id.ac.unuja.bus.R;
-import model.Bingobus7Model;
+import model.BusResultModel;
 
-public class Bingobus7Adapter extends RecyclerView.Adapter<Bingobus7Adapter.ViewHolder> {
+public class BusResultAdapter extends RecyclerView.Adapter<BusResultAdapter.ViewHolder> {
     Context context;
-    ArrayList<Bingobus7Model> models;
+    ArrayList<BusResultModel> models;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView acsleeper;
@@ -30,18 +30,18 @@ public class Bingobus7Adapter extends RecyclerView.Adapter<Bingobus7Adapter.View
         }
     }
 
-    public Bingobus7Adapter(Context context2, ArrayList<Bingobus7Model> arrayList) {
+    public BusResultAdapter(Context context2, ArrayList<BusResultModel> arrayList) {
         this.context = context2;
         this.models = arrayList;
     }
 
 
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        return new ViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_bingobus7, viewGroup, false));
+        return new ViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_bus_result2, viewGroup, false));
     }
 
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
-        viewHolder.acsleeper.setText(((Bingobus7Model) this.models.get(i)).getAcsleeper());
+        viewHolder.acsleeper.setText(((BusResultModel) this.models.get(i)).getAcsleeper());
         if (i == 0) {
             viewHolder.location.setVisibility(View.GONE);
         }

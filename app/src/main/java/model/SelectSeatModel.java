@@ -1,6 +1,6 @@
 package model;
 
-public class Bingobus33Model {
+public class SelectSeatModel {
     Integer sit1;
 
     public Integer getSit1() {
@@ -11,7 +11,7 @@ public class Bingobus33Model {
         this.sit1 = num;
     }
 
-    public Bingobus33Model(Integer num) {
+    public SelectSeatModel(Integer num) {
         this.sit1 = num;
     }
 }

@@ -533,26 +533,6 @@
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="23dp"
-                android:layout_marginTop="53.3dp"
-                android:fontFamily="@font/sfpro_display_semibold"
-                android:text="OFFERS"
-                android:textColor="@color/light_black"
-                android:textSize="15sp" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/offers"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="22.7dp"
-                android:clipToPadding="false"
-                android:nestedScrollingEnabled="false"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingBottom="20dp" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

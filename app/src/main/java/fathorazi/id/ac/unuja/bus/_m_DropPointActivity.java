@@ -30,10 +30,9 @@ public class _m_DropPointActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     String[] time = {"8:00 pm", "8:15 pm", "8:30 pm"};
 
-    /* access modifiers changed from: protected */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) R.layout.activity_bingobus32);
+        setContentView(R.layout._m_activity_droppoint);
         this.back = (ImageView) findViewById(R.id.back);
         this.back.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {

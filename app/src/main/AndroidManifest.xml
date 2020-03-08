@@ -9,36 +9,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-        </activity>
-        <activity android:name="._f_HomeActivity"/>
-        <activity android:name="._k_DetailPembayaranActivity"/>
-        <activity android:name="._j_FasilitasActivity"/>
-        <activity android:name="._l_DropPointActivity"/>
-        <activity android:name="._f_FromActivity" android:windowSoftInputMode="adjustUnspecified|stateUnchanged|stateVisible|stateAlwaysVisible|adjustResize"/>
-        <activity android:name="._g_BusResultActivity"/>
-        <activity android:name="ListinwsActivity"/>
-        <activity android:name="._i_SelectSeatActivity"/>
-        <activity android:name="._m_DropPointActivity"/>
-        <activity android:name="._h_BusResultActivity"/>
-        <activity android:theme="@style/activity" android:name="._d_mobileverificationActivity" android:windowSoftInputMode="adjustUnspecified|stateVisible|adjustResize"/>
+        <activity android:name=".MainActivity"/>
         <activity android:name="._a_Splash_screenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:theme="@style/activity" android:name="._e_Edit_MobileActivity" android:windowSoftInputMode="adjustUnspecified|stateVisible|adjustResize"/>
-        <activity android:theme="@style/activity" android:name="._c_walkthruoghActivity" android:windowSoftInputMode="adjustPan"/>
         <activity android:name="._b_Select_CountryActivity"/>
-        <activity android:theme="@style/activity" android:name="._n_Last_StepActivity" android:windowSoftInputMode="adjustPan"/>
+        <activity android:theme="@style/activity" android:name="._c_walkthruoghActivity" android:windowSoftInputMode="adjustPan"/>
+        <activity android:theme="@style/activity" android:name="._d_mobileverificationActivity" android:windowSoftInputMode="adjustUnspecified|stateVisible|adjustResize"/>
+        <activity android:theme="@style/activity" android:name="._e_Edit_MobileActivity" android:windowSoftInputMode="adjustUnspecified|stateVisible|adjustResize"/>
+        <activity android:name="._f_HomeActivity"/>
+        <activity android:name="._f_FromActivity" android:windowSoftInputMode="adjustUnspecified|stateUnchanged|stateVisible|stateAlwaysVisible|adjustResize"/>
         <activity android:name="._f_GoingActivity" android:windowSoftInputMode="adjustUnspecified|stateUnchanged|stateVisible|stateAlwaysVisible|adjustResize"/>
-        <activity android:name="SplaceScreenWSActivity">
-        </activity>
-        <activity android:name="._q_BookingDetailActivity"/>
+        <activity android:name="._f_OffersActivity"/>
+        <activity android:name="._g_BusResultActivity"/>
+        <activity android:name="._h_BusResultActivity"/>
+        <activity android:name="._i_SelectSeatActivity"/>
+        <activity android:name="._j_FasilitasActivity"/>
+        <activity android:name="._k_DetailPembayaranActivity"/>
+        <activity android:name="._l_DropPointActivity"/>
+        <activity android:name="._m_DropPointActivity"/>
+        <activity android:theme="@style/activity" android:name="._n_Last_StepActivity" android:windowSoftInputMode="adjustPan"/>
         <activity android:name="._o_YourTicketBookedActivity"/>
         <activity android:name="._p_BookingHistoryActivity"/>
-
+        <activity android:name="._q_BookingDetailActivity"/>
+        <activity android:name="SplaceScreenWSActivity"/>
+        <activity android:name="ListinwsActivity"/>
     </application>
 
 </manifest>

@@ -1,6 +1,6 @@
 package model;
 
-public class Bingobus7Model {
+public class BusResult1Model {
     String acsleeper;
 
     public String getAcsleeper() {
@@ -11,7 +11,7 @@ public class Bingobus7Model {
         this.acsleeper = str;
     }
 
-    public Bingobus7Model(String str) {
+    public BusResult1Model(String str) {
         this.acsleeper = str;
     }
 }

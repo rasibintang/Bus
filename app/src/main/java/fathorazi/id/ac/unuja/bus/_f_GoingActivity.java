@@ -1,6 +1,6 @@
 package fathorazi.id.ac.unuja.bus;
 
-import Adapter.CustomerAdapter;
+import Adapter.FromAdapter;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.View;
@@ -10,23 +10,23 @@ import android.widget.AutoCompleteTextView;
 import java.util.ArrayList;
 
 import androidx.appcompat.app.AppCompatActivity;
-import model.Customer;
+import model.From;
 
 public class _f_GoingActivity extends AppCompatActivity {
-    CustomerAdapter adapter = null;
+    FromAdapter adapter = null;
     AutoCompleteTextView autoCompleteTextView;
-    ArrayList<Customer> customers = null;
+    ArrayList<From> froms = null;
     int layout;
 
     /* access modifiers changed from: protected */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) R.layout.activity_bigobus5);
+        setContentView((int) R.layout._f_activity_going);
         this.layout = getIntent().getIntExtra("layout", 0);
-        this.customers = new ArrayList<>();
-        this.customers = populateCustomerData(this.customers);
+        this.froms = new ArrayList<>();
+        this.froms = populateCustomerData(this.froms);
         this.autoCompleteTextView = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView);
-        this.adapter = new CustomerAdapter(this, this.customers);
+        this.adapter = new FromAdapter(this, this.froms);
         this.autoCompleteTextView.setAdapter(this.adapter);
         this.autoCompleteTextView.setThreshold(1);
         this.autoCompleteTextView.setOnItemClickListener(new OnItemClickListener() {
@@ -47,62 +47,62 @@ public class _f_GoingActivity extends AppCompatActivity {
         });
     }
 
-    private ArrayList<Customer> populateCustomerData(ArrayList<Customer> arrayList) {
-        arrayList.add(new Customer("Ahmedabad", BuildConfig.FLAVOR, 8, R.drawable.clock));
-        arrayList.add(new Customer("Agra", BuildConfig.FLAVOR, 8, R.drawable.clock));
-        arrayList.add(new Customer("Amritsar", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Allahabad", BuildConfig.FLAVOR, 8, R.drawable.clock));
-        arrayList.add(new Customer("Banglore", BuildConfig.FLAVOR, 8, R.drawable.clock));
-        arrayList.add(new Customer("Bhopal", BuildConfig.FLAVOR, 8, R.drawable.clock));
-        arrayList.add(new Customer("Baroda", BuildConfig.FLAVOR, 8, R.drawable.clock));
-        arrayList.add(new Customer("Channei", BuildConfig.FLAVOR, 8, R.drawable.clock));
-        arrayList.add(new Customer("Coimbatore", BuildConfig.FLAVOR, 8, R.drawable.clock));
-        arrayList.add(new Customer("Chandigarh", BuildConfig.FLAVOR, 8, R.drawable.clock));
-        arrayList.add(new Customer("Delhi", BuildConfig.FLAVOR, 1, R.drawable.clock));
-        arrayList.add(new Customer("Dehradun", BuildConfig.FLAVOR, 1, R.drawable.clock));
-        arrayList.add(new Customer("Durgapur", BuildConfig.FLAVOR, 1, R.drawable.clock));
-        arrayList.add(new Customer("Edamon", BuildConfig.FLAVOR, 1, R.drawable.clock));
-        arrayList.add(new Customer("Faridabad", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Gandinager", BuildConfig.FLAVOR, 9, R.drawable.clock));
-        arrayList.add(new Customer("Gadhada", BuildConfig.FLAVOR, 9, R.drawable.clock));
-        arrayList.add(new Customer("Hajipur", BuildConfig.FLAVOR, 9, R.drawable.clock));
-        arrayList.add(new Customer("Indore", BuildConfig.FLAVOR, 3, R.drawable.clock));
-        arrayList.add(new Customer("Jodhpur", BuildConfig.FLAVOR, 1, R.drawable.clock));
-        arrayList.add(new Customer("jaipur", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Kanpur", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Kolkata", BuildConfig.FLAVOR, 1, R.drawable.clock));
-        arrayList.add(new Customer("Lucknow", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Limdi", BuildConfig.FLAVOR, 9, R.drawable.clock));
-        arrayList.add(new Customer("Mumbai", BuildConfig.FLAVOR, 1, R.drawable.clock));
-        arrayList.add(new Customer("Meerut", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Navi Mumbai", BuildConfig.FLAVOR, 1, R.drawable.clock));
-        arrayList.add(new Customer("Nagpur", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Nashik", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Panjab", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Pulav", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("puna", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Patna", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Ranchi", BuildConfig.FLAVOR, 1, R.drawable.clock));
-        arrayList.add(new Customer("Rajkot", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Surat", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Sachin", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Sayan", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Srinagar", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Tajpur", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Tadoba", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Tal", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Udaipura (Mp)", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Uttarsanda", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Vapi", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Valsad", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Vadodara", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Wada", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Wadner Bholji", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Yadgir", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Yavat", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Zalansar", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Zadkala", BuildConfig.FLAVOR, 10, R.drawable.clock));
-        arrayList.add(new Customer("Zirakpur", BuildConfig.FLAVOR, 10, R.drawable.clock));
+    private ArrayList<From> populateCustomerData(ArrayList<From> arrayList) {
+        arrayList.add(new From("Ahmedabad", BuildConfig.FLAVOR, 8, R.drawable.clock));
+        arrayList.add(new From("Agra", BuildConfig.FLAVOR, 8, R.drawable.clock));
+        arrayList.add(new From("Amritsar", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Allahabad", BuildConfig.FLAVOR, 8, R.drawable.clock));
+        arrayList.add(new From("Banglore", BuildConfig.FLAVOR, 8, R.drawable.clock));
+        arrayList.add(new From("Bhopal", BuildConfig.FLAVOR, 8, R.drawable.clock));
+        arrayList.add(new From("Baroda", BuildConfig.FLAVOR, 8, R.drawable.clock));
+        arrayList.add(new From("Channei", BuildConfig.FLAVOR, 8, R.drawable.clock));
+        arrayList.add(new From("Coimbatore", BuildConfig.FLAVOR, 8, R.drawable.clock));
+        arrayList.add(new From("Chandigarh", BuildConfig.FLAVOR, 8, R.drawable.clock));
+        arrayList.add(new From("Delhi", BuildConfig.FLAVOR, 1, R.drawable.clock));
+        arrayList.add(new From("Dehradun", BuildConfig.FLAVOR, 1, R.drawable.clock));
+        arrayList.add(new From("Durgapur", BuildConfig.FLAVOR, 1, R.drawable.clock));
+        arrayList.add(new From("Edamon", BuildConfig.FLAVOR, 1, R.drawable.clock));
+        arrayList.add(new From("Faridabad", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Gandinager", BuildConfig.FLAVOR, 9, R.drawable.clock));
+        arrayList.add(new From("Gadhada", BuildConfig.FLAVOR, 9, R.drawable.clock));
+        arrayList.add(new From("Hajipur", BuildConfig.FLAVOR, 9, R.drawable.clock));
+        arrayList.add(new From("Indore", BuildConfig.FLAVOR, 3, R.drawable.clock));
+        arrayList.add(new From("Jodhpur", BuildConfig.FLAVOR, 1, R.drawable.clock));
+        arrayList.add(new From("jaipur", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Kanpur", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Kolkata", BuildConfig.FLAVOR, 1, R.drawable.clock));
+        arrayList.add(new From("Lucknow", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Limdi", BuildConfig.FLAVOR, 9, R.drawable.clock));
+        arrayList.add(new From("Mumbai", BuildConfig.FLAVOR, 1, R.drawable.clock));
+        arrayList.add(new From("Meerut", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Navi Mumbai", BuildConfig.FLAVOR, 1, R.drawable.clock));
+        arrayList.add(new From("Nagpur", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Nashik", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Panjab", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Pulav", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("puna", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Patna", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Ranchi", BuildConfig.FLAVOR, 1, R.drawable.clock));
+        arrayList.add(new From("Rajkot", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Surat", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Sachin", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Sayan", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Srinagar", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Tajpur", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Tadoba", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Tal", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Udaipura (Mp)", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Uttarsanda", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Vapi", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Valsad", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Vadodara", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Wada", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Wadner Bholji", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Yadgir", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Yavat", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Zalansar", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Zadkala", BuildConfig.FLAVOR, 10, R.drawable.clock));
+        arrayList.add(new From("Zirakpur", BuildConfig.FLAVOR, 10, R.drawable.clock));
         return arrayList;
     }
 }

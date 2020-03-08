@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class _a_Splash_screenActivity extends AppCompatActivity {
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(R.layout.activity_splash_screen);
+        setContentView(R.layout._a_activity_splash_screen);
         new Thread() {
             public void run() {
                 try {

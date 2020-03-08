@@ -28,7 +28,7 @@ public class _i_SelectSeatActivity extends AppCompatActivity implements OnSeatSe
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(R.layout.activity_bingobus33);
+        setContentView(R.layout._i_activity_selectseat);
         this.txtSeatSelected = (TextView) findViewById(R.id.txt_seat_selected);
         ArrayList arrayList = new ArrayList();
         for (int i = 0; i < 50; i++) {

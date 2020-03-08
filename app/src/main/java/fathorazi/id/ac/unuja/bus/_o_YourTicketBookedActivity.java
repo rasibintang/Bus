@@ -15,10 +15,9 @@ public class _o_YourTicketBookedActivity extends AppCompatActivity implements On
     TextView txtfemale;
     TextView txtmale;
 
-    /* access modifiers changed from: protected */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) R.layout.activity_bingo_bus_your_ticket_booked);
+        setContentView((int) R.layout._o_activity_your_ticket_booked);
         this.male = (LinearLayout) findViewById(R.id.male);
         this.female = (LinearLayout) findViewById(R.id.female);
         this.txtmale = (TextView) findViewById(R.id.txtmale);

@@ -23,7 +23,7 @@ public class _n_Last_StepActivity extends AppCompatActivity implements OnClickLi
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(R.layout.activity_bingobus_last_step);
+        setContentView(R.layout._n_activity_last_step);
         this.male = (LinearLayout) findViewById(R.id.male);
         this.female = (LinearLayout) findViewById(R.id.female);
         this.txtmale = (TextView) findViewById(R.id.txtmale);

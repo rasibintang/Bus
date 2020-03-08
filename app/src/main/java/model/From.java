@@ -2,18 +2,17 @@ package model;
 
 import fathorazi.id.ac.unuja.bus.BuildConfig;
 
-public class Customer {
+public class From {
     private String firstName = BuildConfig.FLAVOR;
 
-    /* renamed from: id */
-    private int f53id = 0;
+    private int id = 0;
     private String lastName = BuildConfig.FLAVOR;
     private int profilePic = -1;
 
-    public Customer(String str, String str2, int i, int i2) {
+    public From(String str, String str2, int i, int i2) {
         this.firstName = str;
         this.lastName = str2;
-        this.f53id = i;
+        this.id = i;
         this.profilePic = i2;
     }
 
@@ -34,11 +33,11 @@ public class Customer {
     }
 
     public int getId() {
-        return this.f53id;
+        return this.id;
     }
 
     public void setId(int i) {
-        this.f53id = i;
+        this.id = i;
     }
 
     public int getProfilePic() {

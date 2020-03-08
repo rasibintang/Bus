@@ -27,7 +27,7 @@ public class _b_Select_CountryActivity extends AppCompatActivity {
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(R.layout.activity_bingobus_select_country);
+        setContentView(R.layout._b_activity_select_country);
         this.spinner = findViewById(R.id.spinner);
         this.spinnerAdapter = new CustomSpinnerAdapter(this, this.countries);
         this.spinner.setAdapter(this.spinnerAdapter);
@@ -46,6 +46,7 @@ public class _b_Select_CountryActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent lanjut = new Intent(getApplicationContext(), _c_walkthruoghActivity.class);
+                finish();
                 startActivity(lanjut);
             }
         });
