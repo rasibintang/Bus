@@ -4,6 +4,7 @@ import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -13,22 +14,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class Bingobus33Activity extends AppCompatActivity implements OnSeatSelected {
+public class _i_SelectSeatActivity extends AppCompatActivity implements OnSeatSelected {
     private static final int COLUMNS = 5;
     ImageView back_press;
     private Builder builder;
     ImageView cancel;
     int count = 0;
-    LinearLayout detailes;
-    LinearLayout next;
-    LinearLayout recipt;
+    private LinearLayout detailes;
+    private LinearLayout next;
+    private LinearLayout recipt;
     Dialog slideDialog;
     private TextView txtSeatSelected;
 
-    /* access modifiers changed from: protected */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) R.layout.activity_bingobus33);
+        setContentView(R.layout.activity_bingobus33);
         this.txtSeatSelected = (TextView) findViewById(R.id.txt_seat_selected);
         ArrayList arrayList = new ArrayList();
         for (int i = 0; i < 50; i++) {
@@ -44,6 +44,33 @@ public class Bingobus33Activity extends AppCompatActivity implements OnSeatSelec
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.lst_items);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 5));
         recyclerView.setAdapter(new AirplaneAdapter(this, arrayList));
+
+        detailes = findViewById(R.id.detailes);
+        detailes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent verifikasi = new Intent(getApplicationContext(), _j_FasilitasActivity.class);
+                startActivity(verifikasi);
+            }
+        });
+
+        recipt = findViewById(R.id.recipt);
+        recipt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent verifikasi = new Intent(getApplicationContext(), _k_DetailPembayaranActivity.class);
+                startActivity(verifikasi);
+            }
+        });
+
+        next = findViewById(R.id.next);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent verifikasi = new Intent(getApplicationContext(), _n_Last_StepActivity.class);
+                startActivity(verifikasi);
+            }
+        });
     }
 
     public void onSeatSelected(int i) {
@@ -57,10 +84,8 @@ public class Bingobus33Activity extends AppCompatActivity implements OnSeatSelec
     }
 
     public void onBackPressed() {
-        Intent intent = new Intent(this, ListinwsActivity.class);
         finish();
         overridePendingTransition(R.anim.left_in, R.anim.right_out);
-        startActivity(intent);
         super.onBackPressed();
     }
 }

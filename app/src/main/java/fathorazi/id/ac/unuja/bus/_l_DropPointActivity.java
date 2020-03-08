@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import model.BoardingPointModel;
 
-public class Bingobus31Activity extends AppCompatActivity {
+public class _l_DropPointActivity extends AppCompatActivity {
     ImageView back;
     private BoardingPointAdapter boardingPointAdapter;
     private ArrayList<BoardingPointModel> boardingPointModels;
@@ -30,10 +30,10 @@ public class Bingobus31Activity extends AppCompatActivity {
         this.back = (ImageView) findViewById(R.id.back);
         this.back.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
-                Intent intent = new Intent(Bingobus31Activity.this, Bingobus33Activity.class);
-                Bingobus31Activity.this.finish();
-                Bingobus31Activity.this.overridePendingTransition(R.anim.left_in, R.anim.right_out);
-                Bingobus31Activity.this.startActivity(intent);
+                Intent intent = new Intent(_l_DropPointActivity.this, _i_SelectSeatActivity.class);
+                _l_DropPointActivity.this.finish();
+                _l_DropPointActivity.this.overridePendingTransition(R.anim.left_in, R.anim.right_out);
+                _l_DropPointActivity.this.startActivity(intent);
             }
         });
         this.recyclerView = (RecyclerView) findViewById(R.id.boardingpontrecycler);

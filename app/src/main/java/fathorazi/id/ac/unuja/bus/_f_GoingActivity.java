@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import androidx.appcompat.app.AppCompatActivity;
 import model.Customer;
 
-public class Bingobus4Activity extends AppCompatActivity {
+public class _f_GoingActivity extends AppCompatActivity {
     CustomerAdapter adapter = null;
     AutoCompleteTextView autoCompleteTextView;
     ArrayList<Customer> customers = null;
@@ -21,7 +21,7 @@ public class Bingobus4Activity extends AppCompatActivity {
     /* access modifiers changed from: protected */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) R.layout.activity_bingobus4);
+        setContentView((int) R.layout.activity_bigobus5);
         this.layout = getIntent().getIntExtra("layout", 0);
         this.customers = new ArrayList<>();
         this.customers = populateCustomerData(this.customers);
@@ -32,31 +32,22 @@ public class Bingobus4Activity extends AppCompatActivity {
         this.autoCompleteTextView.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long j) {
                 String obj = adapterView.getItemAtPosition(i).toString();
-                Editor edit = Bingobus4Activity.this.getApplicationContext().getSharedPreferences("MyPref", 0).edit();
-                if (obj == null) {
-                    return;
-                }
-                if (Bingobus4Activity.this.layout == 1) {
-                    edit.putString("from", obj);
+                Editor edit = _f_GoingActivity.this.getApplicationContext().getSharedPreferences("MyPref", 0).edit();
+                if (obj != null) {
+                    if (_f_GoingActivity.this.layout == 1) {
+                        edit.putString("from", obj);
+                    }
+                    if (_f_GoingActivity.this.layout == 2) {
+                        edit.putString("to", obj);
+                    }
                     edit.commit();
-                    Bingobus4Activity.this.layout = 2;
-                    Bingobus4Activity.this.customers.clear();
-                    Bingobus4Activity.this.adapter.notifyDataSetChanged();
-                    Bingobus4Activity.this.customers = Bingobus4Activity.this.populateCustomerData(Bingobus4Activity.this.customers);
-                    Bingobus4Activity.this.adapter.notifyDataSetChanged();
-                    Bingobus4Activity.this.autoCompleteTextView.setText(BuildConfig.FLAVOR);
-                    Bingobus4Activity.this.autoCompleteTextView.setHint("Going where?");
-                } else if (Bingobus4Activity.this.layout == 2) {
-                    edit.putString("to", obj);
-                    edit.commit();
-                    Bingobus4Activity.this.finish();
+                    _f_GoingActivity.this.finish();
                 }
             }
         });
     }
 
-    /* access modifiers changed from: private */
-    public ArrayList<Customer> populateCustomerData(ArrayList<Customer> arrayList) {
+    private ArrayList<Customer> populateCustomerData(ArrayList<Customer> arrayList) {
         arrayList.add(new Customer("Ahmedabad", BuildConfig.FLAVOR, 8, R.drawable.clock));
         arrayList.add(new Customer("Agra", BuildConfig.FLAVOR, 8, R.drawable.clock));
         arrayList.add(new Customer("Amritsar", BuildConfig.FLAVOR, 10, R.drawable.clock));

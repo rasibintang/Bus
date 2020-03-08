@@ -60,7 +60,8 @@
                 android:fontFamily="@font/sfpro_display_regular"
                 android:text="Edit Mobile number"
                 android:textColor="#91959d"
-                android:textSize="13.3sp" />
+                android:textSize="13.3sp"
+                android:id="@+id/editphone"/>
         </LinearLayout>
     </LinearLayout>
 

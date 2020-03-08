@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Splash_screenActivity extends AppCompatActivity {
+public class _a_Splash_screenActivity extends AppCompatActivity {
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.activity_splash_screen);
@@ -13,8 +13,8 @@ public class Splash_screenActivity extends AppCompatActivity {
             public void run() {
                 try {
                     sleep(2000);
-                    Splash_screenActivity.this.startActivity(new Intent(Splash_screenActivity.this, Bingobus_Select_CountryActivity.class));
-                    Splash_screenActivity.this.finish();
+                    _a_Splash_screenActivity.this.startActivity(new Intent(_a_Splash_screenActivity.this, _b_Select_CountryActivity.class));
+                    _a_Splash_screenActivity.this.finish();
                 } catch (Exception unused) {
                 }
             }

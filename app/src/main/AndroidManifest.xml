@@ -11,33 +11,33 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
         </activity>
-        <activity android:name="Bingobus24Activity"/>
-        <activity android:name="Bingobus28Activity"/>
-        <activity android:name="Bingobus27Activity"/>
-        <activity android:name="Bingobus31Activity"/>
-        <activity android:name="Bingobus4Activity" android:windowSoftInputMode="adjustUnspecified|stateUnchanged|stateVisible|stateAlwaysVisible|adjustResize"/>
-        <activity android:name="Bingobus7Activity"/>
+        <activity android:name="._f_HomeActivity"/>
+        <activity android:name="._k_DetailPembayaranActivity"/>
+        <activity android:name="._j_FasilitasActivity"/>
+        <activity android:name="._l_DropPointActivity"/>
+        <activity android:name="._f_FromActivity" android:windowSoftInputMode="adjustUnspecified|stateUnchanged|stateVisible|stateAlwaysVisible|adjustResize"/>
+        <activity android:name="._g_BusResultActivity"/>
         <activity android:name="ListinwsActivity"/>
-        <activity android:name="Bingobus33Activity"/>
-        <activity android:name="Bingobus32Activity"/>
-        <activity android:name="Bus_result1Activity"/>
-        <activity android:theme="@style/activity" android:name="Bingobus_mobileverificationActivity" android:windowSoftInputMode="adjustUnspecified|stateVisible|adjustResize"/>
-        <activity android:name="Splash_screenActivity">
+        <activity android:name="._i_SelectSeatActivity"/>
+        <activity android:name="._m_DropPointActivity"/>
+        <activity android:name="._h_BusResultActivity"/>
+        <activity android:theme="@style/activity" android:name="._d_mobileverificationActivity" android:windowSoftInputMode="adjustUnspecified|stateVisible|adjustResize"/>
+        <activity android:name="._a_Splash_screenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:theme="@style/activity" android:name="Bingobus_Edit_MobileActivity" android:windowSoftInputMode="adjustUnspecified|stateVisible|adjustResize"/>
-        <activity android:theme="@style/activity" android:name="Bingobus_walkthruoghActivity" android:windowSoftInputMode="adjustPan"/>
-        <activity android:name="Bingobus_Select_CountryActivity"/>
-        <activity android:theme="@style/activity" android:name="Bingobus_Last_StepActivity" android:windowSoftInputMode="adjustPan"/>
-        <activity android:name="Bingobus5Activity" android:windowSoftInputMode="adjustUnspecified|stateUnchanged|stateVisible|stateAlwaysVisible|adjustResize"/>
+        <activity android:theme="@style/activity" android:name="._e_Edit_MobileActivity" android:windowSoftInputMode="adjustUnspecified|stateVisible|adjustResize"/>
+        <activity android:theme="@style/activity" android:name="._c_walkthruoghActivity" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="._b_Select_CountryActivity"/>
+        <activity android:theme="@style/activity" android:name="._n_Last_StepActivity" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="._f_GoingActivity" android:windowSoftInputMode="adjustUnspecified|stateUnchanged|stateVisible|stateAlwaysVisible|adjustResize"/>
         <activity android:name="SplaceScreenWSActivity">
         </activity>
-        <activity android:name="BingoBusBookingDetailActivity"/>
-        <activity android:name="BingoBusYourTicketBookedActivity"/>
-        <activity android:name="BingoBusBookingHistoryActivity"/>
+        <activity android:name="._q_BookingDetailActivity"/>
+        <activity android:name="._o_YourTicketBookedActivity"/>
+        <activity android:name="._p_BookingHistoryActivity"/>
 
     </application>
 

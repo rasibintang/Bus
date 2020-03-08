@@ -1,6 +1,8 @@
 package fathorazi.id.ac.unuja.bus;
 
 import Adapter.CustomSpinnerAdapter;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -15,11 +17,11 @@ import java.util.List;
 import androidx.appcompat.app.AppCompatActivity;
 import model.Country;
 
-public class Bingobus_Select_CountryActivity extends AppCompatActivity {
+public class _b_Select_CountryActivity extends AppCompatActivity {
     Animation animation;
     ImageView back;
     public List<Country> countries = new ArrayList();
-    TextView next;
+    private TextView next;
     private Spinner spinner;
     private CustomSpinnerAdapter spinnerAdapter;
 
@@ -34,13 +36,19 @@ public class Bingobus_Select_CountryActivity extends AppCompatActivity {
             }
 
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long j) {
-                Country country = Bingobus_Select_CountryActivity.this.countries.get(i);
+                Country country = countries.get(i);
             }
         });
         populateCountries();
 
         this.next = findViewById(R.id.next);
-        ne
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent lanjut = new Intent(getApplicationContext(), _c_walkthruoghActivity.class);
+                startActivity(lanjut);
+            }
+        });
     }
 
     private void populateCountries() {

@@ -12,14 +12,17 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
+import Adapter.RecyclerItemClickListener;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import model.Bingobus7Model;
 
-public class Bingobus7Activity extends AppCompatActivity {
+public class _g_BusResultActivity extends AppCompatActivity {
     Animation animation;
     ImageView back;
     private Bingobus7Adapter bingobas7_adapter;
@@ -27,32 +30,39 @@ public class Bingobus7Activity extends AppCompatActivity {
     TextView down;
     private RecyclerView recyclerView;
 
-    /* renamed from: up */
-    TextView f48up;
+    TextView up;
 
-    /* access modifiers changed from: protected */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView((int) R.layout.activity_bingobus7);
         this.back = (ImageView) findViewById(R.id.back);
         this.back.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
-                Intent intent = new Intent(Bingobus7Activity.this, Bingobus24Activity.class);
-                Bingobus7Activity.this.finish();
-                Bingobus7Activity.this.overridePendingTransition(R.anim.left_in, R.anim.right_out);
-                Bingobus7Activity.this.startActivity(intent);
+                Intent intent = new Intent(_g_BusResultActivity.this, _f_HomeActivity.class);
+                _g_BusResultActivity.this.finish();
+                _g_BusResultActivity.this.overridePendingTransition(R.anim.left_in, R.anim.right_out);
+                _g_BusResultActivity.this.startActivity(intent);
             }
         });
-        this.f48up = (TextView) findViewById(R.id.up);
+        this.up = (TextView) findViewById(R.id.up);
         this.down = (TextView) findViewById(R.id.down);
         SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("MyPref", 0);
-        this.f48up.setText(sharedPreferences.getString("from", null));
+        this.up.setText(sharedPreferences.getString("from", null));
         this.down.setText(sharedPreferences.getString("to", null));
         this.recyclerView = (RecyclerView) findViewById(R.id.recycler1);
         this.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         this.recyclerView.setFocusableInTouchMode(false);
         this.recyclerView.setNestedScrollingEnabled(false);
         runAnimation(this.recyclerView);
+
+        recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Toast.makeText(_g_BusResultActivity.this, String.valueOf(position), Toast.LENGTH_SHORT).show();
+                Intent lanjut = new Intent(getApplicationContext(), _i_SelectSeatActivity.class);
+                startActivity(lanjut);
+            }
+        }));
     }
 
     private void runAnimation(RecyclerView recyclerView2) {
@@ -75,9 +85,8 @@ public class Bingobus7Activity extends AppCompatActivity {
 
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(this, ListinwsActivity.class);
         finish();
         overridePendingTransition(R.anim.left_in, R.anim.right_out);
-        startActivity(intent);
+
     }
 }

@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import model.BoardingPointModel;
 
-public class Bingobus32Activity extends AppCompatActivity {
+public class _m_DropPointActivity extends AppCompatActivity {
     ImageView back;
     private DropingPointAdapter boardingPointAdapter;
     private ArrayList<BoardingPointModel> boardingPointModels;
@@ -37,29 +37,29 @@ public class Bingobus32Activity extends AppCompatActivity {
         this.back = (ImageView) findViewById(R.id.back);
         this.back.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
-                Intent intent = new Intent(Bingobus32Activity.this, Bingobus31Activity.class);
-                Bingobus32Activity.this.finish();
-                Bingobus32Activity.this.overridePendingTransition(R.anim.left_in, R.anim.right_out);
-                Bingobus32Activity.this.startActivity(intent);
+                Intent intent = new Intent(_m_DropPointActivity.this, _l_DropPointActivity.class);
+                _m_DropPointActivity.this.finish();
+                _m_DropPointActivity.this.overridePendingTransition(R.anim.left_in, R.anim.right_out);
+                _m_DropPointActivity.this.startActivity(intent);
             }
         });
         this.card_bottom = (LinearLayout) findViewById(R.id.card_bottom);
         this.booknow = (LinearLayout) findViewById(R.id.booknow);
         this.booknow.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
-                Intent intent = new Intent(Bingobus32Activity.this, Bingobus_Last_StepActivity.class);
-                Bingobus32Activity.this.finish();
-                Bingobus32Activity.this.overridePendingTransition(R.anim.right_in, R.anim.left_out);
-                Bingobus32Activity.this.startActivity(intent);
+                Intent intent = new Intent(_m_DropPointActivity.this, _n_Last_StepActivity.class);
+                _m_DropPointActivity.this.finish();
+                _m_DropPointActivity.this.overridePendingTransition(R.anim.right_in, R.anim.left_out);
+                _m_DropPointActivity.this.startActivity(intent);
             }
         });
         this.boardingtext = (TextView) findViewById(R.id.boardingtext);
         this.boardingtext.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
-                Intent intent = new Intent(Bingobus32Activity.this, Bingobus31Activity.class);
-                Bingobus32Activity.this.finish();
-                Bingobus32Activity.this.overridePendingTransition(R.anim.right_in, R.anim.left_out);
-                Bingobus32Activity.this.startActivity(intent);
+                Intent intent = new Intent(_m_DropPointActivity.this, _l_DropPointActivity.class);
+                _m_DropPointActivity.this.finish();
+                _m_DropPointActivity.this.overridePendingTransition(R.anim.right_in, R.anim.left_out);
+                _m_DropPointActivity.this.startActivity(intent);
             }
         });
         this.recyclerView = (RecyclerView) findViewById(R.id.boardingpontrecycler);
@@ -73,16 +73,16 @@ public class Bingobus32Activity extends AppCompatActivity {
         this.recyclerView.setAdapter(this.boardingPointAdapter);
         this.card_bottom.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
-                Intent intent = new Intent(Bingobus32Activity.this, Bingobus_Last_StepActivity.class);
-                Bingobus32Activity.this.finish();
-                Bingobus32Activity.this.overridePendingTransition(R.anim.right_in, R.anim.left_out);
-                Bingobus32Activity.this.startActivity(intent);
+                Intent intent = new Intent(_m_DropPointActivity.this, _n_Last_StepActivity.class);
+                _m_DropPointActivity.this.finish();
+                _m_DropPointActivity.this.overridePendingTransition(R.anim.right_in, R.anim.left_out);
+                _m_DropPointActivity.this.startActivity(intent);
             }
         });
     }
 
     public void onBackPressed() {
-        Intent intent = new Intent(this, Bingobus31Activity.class);
+        Intent intent = new Intent(this, _l_DropPointActivity.class);
         finish();
         overridePendingTransition(R.anim.left_in, R.anim.right_out);
         startActivity(intent);

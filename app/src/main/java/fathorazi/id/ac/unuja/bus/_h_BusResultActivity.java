@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import model.Bingobus_Result1Model;
 
-public class Bus_result1Activity extends AppCompatActivity {
+public class _h_BusResultActivity extends AppCompatActivity {
     private Bingobus_Result1Adapter bingobus_result1Adapter;
     private ArrayList<Bingobus_Result1Model> bingobus_result1Models;
     private RecyclerView recyclerView;

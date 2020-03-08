@@ -29,7 +29,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import model.OffersModel;
 
-public class Bingobus24Activity extends AppCompatActivity implements OnClickListener {
+public class _f_HomeActivity extends AppCompatActivity implements OnClickListener {
     private static final String TAG = "DatePicer";
     private static final String TAG1 = "DatePicer1";
     TextView booking;
@@ -81,18 +81,24 @@ public class Bingobus24Activity extends AppCompatActivity implements OnClickList
     TextView uptext;
     ImageView user;
 
-    /* access modifiers changed from: protected */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) R.layout.activity_bingobus24);
+        setContentView(R.layout.activity_bingobus24);
         this.goingfrom = (LinearLayout) findViewById(R.id.goingfrom);
         this.goingto = (LinearLayout) findViewById(R.id.goingto);
         this.searchbus = (TextView) findViewById(R.id.searchbus);
+        searchbus.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent verifikasi = new Intent(getApplicationContext(), _g_BusResultActivity.class);
+                startActivity(verifikasi);
+            }
+        });
         this.goingfrom.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
-                Intent intent = new Intent(Bingobus24Activity.this, Bingobus4Activity.class);
+                Intent intent = new Intent(_f_HomeActivity.this, _f_FromActivity.class);
                 intent.putExtra("layout", 1);
-                Bingobus24Activity.this.startActivity(intent);
+                _f_HomeActivity.this.startActivity(intent);
             }
         });
         this.date1 = (TextView) findViewById(R.id.date1);
@@ -103,16 +109,16 @@ public class Bingobus24Activity extends AppCompatActivity implements OnClickList
         this.swap = (ImageView) findViewById(R.id.swap);
         this.swap.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
-                String charSequence = Bingobus24Activity.this.uptext.getText().toString();
-                Bingobus24Activity.this.uptext.setText(Bingobus24Activity.this.downtext.getText().toString());
-                Bingobus24Activity.this.downtext.setText(charSequence);
+                String charSequence = _f_HomeActivity.this.uptext.getText().toString();
+                _f_HomeActivity.this.uptext.setText(_f_HomeActivity.this.downtext.getText().toString());
+                _f_HomeActivity.this.downtext.setText(charSequence);
             }
         });
         this.calender1 = (LinearLayout) findViewById(R.id.calender1);
         this.calender1.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
                 Calendar instance = Calendar.getInstance();
-                DatePickerDialog datePickerDialog = new DatePickerDialog(Bingobus24Activity.this, AlertDialog.THEME_DEVICE_DEFAULT_DARK, Bingobus24Activity.this.dateSetListener, instance.get(1), instance.get(2), instance.get(5));
+                DatePickerDialog datePickerDialog = new DatePickerDialog(_f_HomeActivity.this, AlertDialog.THEME_DEVICE_DEFAULT_DARK, _f_HomeActivity.this.dateSetListener, instance.get(1), instance.get(2), instance.get(5));
                 datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
                 datePickerDialog.show();
             }
@@ -121,35 +127,35 @@ public class Bingobus24Activity extends AppCompatActivity implements OnClickList
             public void onDateSet(DatePicker datePicker, int i, int i2, int i3) {
                 String format = new SimpleDateFormat("EEE").format(new Date(i, i2 + 1, i3));
                 if (format.equals("Sun")) {
-                    Bingobus24Activity.this.day1.setText("Sat");
-                    Bingobus24Activity.this.day2.setText("Sun");
-                    Bingobus24Activity.this.day3.setText("Mon");
+                    _f_HomeActivity.this.day1.setText("Sat");
+                    _f_HomeActivity.this.day2.setText("Sun");
+                    _f_HomeActivity.this.day3.setText("Mon");
                 } else if (format.equals("Mon")) {
-                    Bingobus24Activity.this.day1.setText("Sun");
-                    Bingobus24Activity.this.day2.setText("Mon");
-                    Bingobus24Activity.this.day3.setText("Tue");
+                    _f_HomeActivity.this.day1.setText("Sun");
+                    _f_HomeActivity.this.day2.setText("Mon");
+                    _f_HomeActivity.this.day3.setText("Tue");
                 } else if (format.equals("Tue")) {
-                    Bingobus24Activity.this.day1.setText("Mon");
-                    Bingobus24Activity.this.day2.setText("Tue");
-                    Bingobus24Activity.this.day3.setText("Wed");
+                    _f_HomeActivity.this.day1.setText("Mon");
+                    _f_HomeActivity.this.day2.setText("Tue");
+                    _f_HomeActivity.this.day3.setText("Wed");
                 } else if (format.equals("Wed")) {
-                    Bingobus24Activity.this.day1.setText("Tue");
-                    Bingobus24Activity.this.day2.setText("Wed");
-                    Bingobus24Activity.this.day3.setText("Tur");
+                    _f_HomeActivity.this.day1.setText("Tue");
+                    _f_HomeActivity.this.day2.setText("Wed");
+                    _f_HomeActivity.this.day3.setText("Tur");
                 } else if (format.equals("Tur")) {
-                    Bingobus24Activity.this.day1.setText("Wed");
-                    Bingobus24Activity.this.day2.setText("Tur");
-                    Bingobus24Activity.this.day3.setText("Fri");
+                    _f_HomeActivity.this.day1.setText("Wed");
+                    _f_HomeActivity.this.day2.setText("Tur");
+                    _f_HomeActivity.this.day3.setText("Fri");
                 } else if (format.equals("Fri")) {
-                    Bingobus24Activity.this.day1.setText("Tur");
-                    Bingobus24Activity.this.day2.setText("Fri");
-                    Bingobus24Activity.this.day3.setText("Sat");
+                    _f_HomeActivity.this.day1.setText("Tur");
+                    _f_HomeActivity.this.day2.setText("Fri");
+                    _f_HomeActivity.this.day3.setText("Sat");
                 } else if (format.equals("Sat")) {
-                    Bingobus24Activity.this.day1.setText("Fri");
-                    Bingobus24Activity.this.day2.setText("Sat");
-                    Bingobus24Activity.this.day3.setText("Sun");
+                    _f_HomeActivity.this.day1.setText("Fri");
+                    _f_HomeActivity.this.day2.setText("Sat");
+                    _f_HomeActivity.this.day3.setText("Sun");
                 }
-                String str = Bingobus24Activity.TAG;
+                String str = _f_HomeActivity.TAG;
                 StringBuilder sb = new StringBuilder();
                 sb.append("onDateSet: dd: ");
                 sb.append(i3);
@@ -157,17 +163,17 @@ public class Bingobus24Activity extends AppCompatActivity implements OnClickList
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(i3);
                 sb2.append(BuildConfig.FLAVOR);
-                Bingobus24Activity.this.date1.setText(sb2.toString());
-                Bingobus24Activity.this.date1.setText(String.valueOf(Integer.valueOf(String.valueOf(i3)).intValue()));
-                Bingobus24Activity.this.date2.setText(String.valueOf(Integer.valueOf(String.valueOf(i3)).intValue() + 1));
-                Bingobus24Activity.this.date3.setText(String.valueOf(Integer.valueOf(String.valueOf(i3)).intValue() + 2));
+                _f_HomeActivity.this.date1.setText(sb2.toString());
+                _f_HomeActivity.this.date1.setText(String.valueOf(Integer.valueOf(String.valueOf(i3)).intValue()));
+                _f_HomeActivity.this.date2.setText(String.valueOf(Integer.valueOf(String.valueOf(i3)).intValue() + 1));
+                _f_HomeActivity.this.date3.setText(String.valueOf(Integer.valueOf(String.valueOf(i3)).intValue() + 2));
             }
         };
         this.calenderreturn = (LinearLayout) findViewById(R.id.calenderreturn);
         this.calenderreturn.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
                 Calendar instance = Calendar.getInstance();
-                DatePickerDialog datePickerDialog = new DatePickerDialog(Bingobus24Activity.this, AlertDialog.THEME_DEVICE_DEFAULT_LIGHT, Bingobus24Activity.this.dateSetListener1, instance.get(1), instance.get(2), instance.get(5));
+                DatePickerDialog datePickerDialog = new DatePickerDialog(_f_HomeActivity.this, AlertDialog.THEME_DEVICE_DEFAULT_LIGHT, _f_HomeActivity.this.dateSetListener1, instance.get(1), instance.get(2), instance.get(5));
                 datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
                 datePickerDialog.show();
             }
@@ -176,35 +182,35 @@ public class Bingobus24Activity extends AppCompatActivity implements OnClickList
             public void onDateSet(DatePicker datePicker, int i, int i2, int i3) {
                 String format = new SimpleDateFormat("EEE").format(new Date(i, i2 + 1, i3));
                 if (format.equals("Sun")) {
-                    Bingobus24Activity.this.day4.setText("Sat");
-                    Bingobus24Activity.this.day5.setText("Sun");
-                    Bingobus24Activity.this.day6.setText("Mon");
+                    _f_HomeActivity.this.day4.setText("Sat");
+                    _f_HomeActivity.this.day5.setText("Sun");
+                    _f_HomeActivity.this.day6.setText("Mon");
                 } else if (format.equals("Mon")) {
-                    Bingobus24Activity.this.day4.setText("Sun");
-                    Bingobus24Activity.this.day5.setText("Mon");
-                    Bingobus24Activity.this.day6.setText("Tue");
+                    _f_HomeActivity.this.day4.setText("Sun");
+                    _f_HomeActivity.this.day5.setText("Mon");
+                    _f_HomeActivity.this.day6.setText("Tue");
                 } else if (format.equals("Tue")) {
-                    Bingobus24Activity.this.day4.setText("Mon");
-                    Bingobus24Activity.this.day5.setText("Tue");
-                    Bingobus24Activity.this.day6.setText("Wed");
+                    _f_HomeActivity.this.day4.setText("Mon");
+                    _f_HomeActivity.this.day5.setText("Tue");
+                    _f_HomeActivity.this.day6.setText("Wed");
                 } else if (format.equals("Wed")) {
-                    Bingobus24Activity.this.day4.setText("Tue");
-                    Bingobus24Activity.this.day5.setText("Wed");
-                    Bingobus24Activity.this.day6.setText("Tur");
+                    _f_HomeActivity.this.day4.setText("Tue");
+                    _f_HomeActivity.this.day5.setText("Wed");
+                    _f_HomeActivity.this.day6.setText("Tur");
                 } else if (format.equals("Tur")) {
-                    Bingobus24Activity.this.day4.setText("Wed");
-                    Bingobus24Activity.this.day5.setText("Tur");
-                    Bingobus24Activity.this.day6.setText("Fri");
+                    _f_HomeActivity.this.day4.setText("Wed");
+                    _f_HomeActivity.this.day5.setText("Tur");
+                    _f_HomeActivity.this.day6.setText("Fri");
                 } else if (format.equals("Fri")) {
-                    Bingobus24Activity.this.day4.setText("Tur");
-                    Bingobus24Activity.this.day5.setText("Fri");
-                    Bingobus24Activity.this.day6.setText("Sat");
+                    _f_HomeActivity.this.day4.setText("Tur");
+                    _f_HomeActivity.this.day5.setText("Fri");
+                    _f_HomeActivity.this.day6.setText("Sat");
                 } else if (format.equals("Sat")) {
-                    Bingobus24Activity.this.day4.setText("Fri");
-                    Bingobus24Activity.this.day5.setText("Sat");
-                    Bingobus24Activity.this.day6.setText("Sun");
+                    _f_HomeActivity.this.day4.setText("Fri");
+                    _f_HomeActivity.this.day5.setText("Sat");
+                    _f_HomeActivity.this.day6.setText("Sun");
                 }
-                String str = Bingobus24Activity.TAG;
+                String str = _f_HomeActivity.TAG;
                 StringBuilder sb = new StringBuilder();
                 sb.append("onDateSet: dd: ");
                 sb.append(i3);
@@ -212,10 +218,10 @@ public class Bingobus24Activity extends AppCompatActivity implements OnClickList
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(i3);
                 sb2.append(BuildConfig.FLAVOR);
-                Bingobus24Activity.this.date_select1.setText(sb2.toString());
-                Bingobus24Activity.this.date_select1.setText(String.valueOf(Integer.valueOf(String.valueOf(i3)).intValue()));
-                Bingobus24Activity.this.date_select2.setText(String.valueOf(Integer.valueOf(String.valueOf(i3)).intValue() + 1));
-                Bingobus24Activity.this.date_select3.setText(String.valueOf(Integer.valueOf(String.valueOf(i3)).intValue() + 2));
+                _f_HomeActivity.this.date_select1.setText(sb2.toString());
+                _f_HomeActivity.this.date_select1.setText(String.valueOf(Integer.valueOf(String.valueOf(i3)).intValue()));
+                _f_HomeActivity.this.date_select2.setText(String.valueOf(Integer.valueOf(String.valueOf(i3)).intValue() + 1));
+                _f_HomeActivity.this.date_select3.setText(String.valueOf(Integer.valueOf(String.valueOf(i3)).intValue() + 2));
             }
         };
         this.recyclerView = (RecyclerView) findViewById(R.id.offers);
@@ -231,8 +237,8 @@ public class Bingobus24Activity extends AppCompatActivity implements OnClickList
         this.showdata1 = (LinearLayout) findViewById(R.id.showdata1);
         this.showdata.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
-                Bingobus24Activity.this.showdata.setVisibility(View.GONE);
-                Bingobus24Activity.this.showdata1.setVisibility(View.VISIBLE);
+                _f_HomeActivity.this.showdata.setVisibility(View.GONE);
+                _f_HomeActivity.this.showdata1.setVisibility(View.VISIBLE);
             }
         });
         this.circle1 = (FrameLayout) findViewById(R.id.circle1);
@@ -374,6 +380,10 @@ public class Bingobus24Activity extends AppCompatActivity implements OnClickList
                         this.offer.setTextColor(Color.parseColor("#91959d"));
                         this.booking.setTextColor(Color.parseColor("#000000"));
                         this.profile.setTextColor(Color.parseColor("#91959d"));
+
+                        Intent verifikasi = new Intent(getApplicationContext(), _p_BookingHistoryActivity.class);
+                        finish();
+                        startActivity(verifikasi);
                         return;
                     case R.id.liner4 /*2131296413*/:
                         this.bus.setImageResource(R.drawable.ic_bus_gray);
@@ -400,10 +410,8 @@ public class Bingobus24Activity extends AppCompatActivity implements OnClickList
     }
 
     public void onBackPressed() {
-        Intent intent = new Intent(this, ListinwsActivity.class);
         finish();
         overridePendingTransition(R.anim.left_in, R.anim.right_out);
-        startActivity(intent);
         super.onBackPressed();
     }
 }

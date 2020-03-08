@@ -1,6 +1,8 @@
 package fathorazi.id.ac.unuja.bus;
 
 import Adapter.BookingHistoryAdapter;
+
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -18,7 +20,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import model.BookingHistoryModel;
 
-public class BingoBusBookingHistoryActivity extends AppCompatActivity implements OnClickListener {
+public class _p_BookingHistoryActivity extends AppCompatActivity implements OnClickListener {
     Animation animation;
     TextView booking;
     private BookingHistoryAdapter bookingHistoryAdapter;
@@ -91,6 +93,9 @@ public class BingoBusBookingHistoryActivity extends AppCompatActivity implements
                 this.offer.setTextColor(Color.parseColor("#91959d"));
                 this.booking.setTextColor(Color.parseColor("#91959d"));
                 this.profile.setTextColor(Color.parseColor("#91959d"));
+                Intent verifikasi = new Intent(getApplicationContext(), _f_HomeActivity.class);
+                finish();
+                startActivity(verifikasi);
                 return;
             case R.id.liner2 /*2131296411*/:
                 this.bus.setImageResource(R.drawable.ic_bus_gray);
